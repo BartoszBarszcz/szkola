@@ -7,10 +7,10 @@ if (!empty($_POST['name']) && !empty($_POST['figure'])) {
             header('location: sqer.php');
             break;
         case 'prostokat':
-            echo 'prostokąt';
+              header('location: prostokat.php');
             break;
-        
-       
+
+
     }
 }else{
     ?>

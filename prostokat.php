@@ -4,21 +4,20 @@
         <meta charset="utf-8">
 </head>
 <body>
-    <h3>KWADRAT</h3>
+    <h3>Prostokat</h3>
     <form method="post">
       <input type="text" name="sideA" placeholder="Podaj bok a"><br>
+      <input type="text" name="sideB" placeholder="Podaj bok b"><br>
       <input type="submit" value="Oblicz">
     </form>
 </body>
 <?php
-  if (!empty($_POST['sideA'])) {
-    $sideA=str_replace( ',', '.', $_POST['sideA']);
-    echo $sideA;
-    $area=pow($_POST['sideA'], 2);
-    $circuit=4*$_POST['sideA'];
+  if (!empty($_POST['sideA']) && !empty($_POST['sideB'])) {
+    $area=$_POST['sideA']*$_POST['sideB'];
+    $circuit=(2*$_POST['sideA'])+(2*$_POST['sideB']);
     echo <<< RESULT
-    Pole kwadrau wynosi: $area cm<sup>2</sup><br>
-    Obwód kwadratu wynosi: $circuit cm
+    Pole prostokątu wynosi: $area cm<sup>2</sup><br>
+    Obwód prostokątu wynosi: $circuit cm
     RESULT;
   }else {
     echo "Wypełnij długość boku!";
